@@ -1,6 +1,7 @@
 import Hapi from "@hapi/hapi";
+import Vision from "@hapi/vision";
+import Handlebars from "handlebars";
 import path from "path";
-
 import { fileURLToPath } from "url";
 import { webRoutes } from "./web-routes.js";
 
@@ -12,9 +13,19 @@ async function init() {
     port: 3000,
     host: "localhost",
   });
-  
+  await server.register(Vision);
+  server.views({
+    engines: {
+      hbs: Handlebars,
+    },
+    relativeTo: __dirname,
+    path: "./views",
+    layoutPath: "./views/layouts",
+    partialsPath: "./views/partials",
+    layout: true,
+    isCached: false,
+  });
   server.route(webRoutes);
-  
   await server.start();
   console.log("Server running on %s", server.info.uri);
 }
