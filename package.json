@@ -17,6 +17,7 @@
     "@hapi/vision": "^7.0.3",
     "dotenv": "^17.4.2",
     "handlebars": "^4.7.9",
+    "joi": "^18.2.9",
     "uuid": "^14.0.2"
   },
   "devDependencies": {

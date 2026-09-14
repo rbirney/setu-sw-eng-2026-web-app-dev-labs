@@ -1,4 +1,5 @@
 import Hapi from "@hapi/hapi";
+import Joi from "joi";
 import Vision from "@hapi/vision";
 import Handlebars from "handlebars";
 import path from "path";
@@ -20,11 +21,13 @@ const __dirname = path.dirname(__filename);
 
 async function init() {
   const server = Hapi.server({
-    port: 3001,
+    port: 3000,
     host: "localhost",
   });
+  
   await server.register(Vision);
   await server.register(Cookie);
+  server.validator(Joi);
 
   server.auth.strategy("session", "cookie", {
     cookie: {
