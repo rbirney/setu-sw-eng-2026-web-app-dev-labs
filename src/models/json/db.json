@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "firstName": "Rosanne",
+      "lastName": "Birney",
+      "email": "rosanne@gmail.com",
+      "password": "secret",
+      "_id": "72dd21b9-af21-4cea-a2d0-161a2b962ebc"
+    }
+  ],
+  "playlists": [
+    {
+      "userid": "72dd21b9-af21-4cea-a2d0-161a2b962ebc",
+      "title": "Rosanne's playlist",
+      "_id": "05e0b36a-5200-4b66-8055-a7391d2bfb65"
+    }
+  ],
+  "tracks": [
+    {
+      "title": "best song",
+      "artist": "best artist",
+      "duration": 3,
+      "_id": "39ffffac-4faf-4c0a-9d3e-f709c94eedda",
+      "playlistid": "05e0b36a-5200-4b66-8055-a7391d2bfb65"
+    }
+  ]
+}
