@@ -6,6 +6,13 @@
       "email": "rosanne@gmail.com",
       "password": "secret",
       "_id": "72dd21b9-af21-4cea-a2d0-161a2b962ebc"
+    },
+    {
+      "firstName": "Rosanne",
+      "lastName": "Birney",
+      "email": "rosanne@gmail.com",
+      "password": "secret",
+      "_id": "52061dbf-2832-4617-b51c-4e44c9b48671"
     }
   ],
   "playlists": [
@@ -22,6 +29,20 @@
       "duration": 3,
       "_id": "39ffffac-4faf-4c0a-9d3e-f709c94eedda",
       "playlistid": "05e0b36a-5200-4b66-8055-a7391d2bfb65"
+    },
+    {
+      "title": "asdf",
+      "artist": "asdf",
+      "duration": 0,
+      "_id": "2c6d5b69-f7bd-4ef8-8e4d-ee2b545e8a75",
+      "playlistid": "05e0b36a-5200-4b66-8055-a7391d2bfb65"
+    },
+    {
+      "title": "test",
+      "artist": "test",
+      "duration": 0,
+      "_id": "01e96fad-16b8-41ae-a97c-0888f210b79b",
+      "playlistid": "c4d23abe-8756-409b-b785-84eb9bd2b967"
     }
   ]
 }
