@@ -1,7 +1,10 @@
+import { EventEmitter } from "events";
 import { assert } from "chai";
 import { playtimeService } from "./playtime-service.js";
 import { assertSubset } from "../test-utils.js";
 import { maggie, testUsers } from "../fixtures.js";
+
+EventEmitter.setMaxListeners(25);
 
 suite("User API tests", () => {
   setup(async () => {

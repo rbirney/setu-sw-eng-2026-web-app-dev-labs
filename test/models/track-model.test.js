@@ -1,7 +1,10 @@
+import { EventEmitter } from "events";
 import { assert } from "chai";
 import { db } from "../../src/models/db.js";
 import { testPlaylists, testTracks, beethoven, mozart, concerto, testUsers } from "../fixtures.js";
 import { assertSubset } from "../test-utils.js";
+
+EventEmitter.setMaxListeners(25);
 
 suite("Track Model tests", () => {
 
