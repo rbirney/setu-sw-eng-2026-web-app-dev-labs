@@ -5,6 +5,18 @@ import { serviceUrl } from "../fixtures.js";
 export const playtimeService = {
   playtimeUrl: serviceUrl,
 
+  async authenticate(user) {
+    const response = await axios.post(`${this.playtimeUrl}/api/users/authenticate`, user);
+    // eslint-disable-next-line dot-notation, prefer-template
+    axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
+    return response.data;
+  },
+
+  async clearAuth() {
+    // eslint-disable-next-line dot-notation
+    axios.defaults.headers.common["Authorization"] = "";
+  },
+
   async createUser(user) {
     const res = await axios.post(`${this.playtimeUrl}/api/users`, user);
     return res.data;
