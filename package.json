@@ -13,7 +13,9 @@
     "testapi": "mocha test/api/**/*.js"
   },
   "nodemonConfig": {
-    "ignore": ["src/models/json/**/*.json"]
+    "ignore": [
+      "src/models/json/**/*.json"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -21,9 +23,11 @@
     "@hapi/boom": "^10.0.1",
     "@hapi/cookie": "^12.0.1",
     "@hapi/hapi": "^21.4.10",
+    "@hapi/inert": "^7.1.2",
     "@hapi/vision": "^7.0.3",
     "dotenv": "^17.4.2",
     "handlebars": "^4.7.9",
+    "hapi-swagger": "^17.3.2",
     "joi": "^18.2.9",
     "lowdb": "^7.0.1",
     "mongoose": "^9.10.2",
