@@ -2,7 +2,7 @@ import { EventEmitter } from "events";
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { playtimeService } from "./playtime-service.js";
-import { maggie, mozart, testPlaylists, testTracks, concerto } from "../fixtures.js";
+import { maggie, maggieCredentials, mozart, testPlaylists, testTracks, concerto } from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -13,12 +13,12 @@ suite("Track API tests", () => {
   setup(async () => {
     playtimeService.clearAuth();
     user = await playtimeService.createUser(maggie);
-    await playtimeService.authenticate(maggie);
+    await playtimeService.authenticate(maggieCredentials);
     await playtimeService.deleteAllPlaylists();
     await playtimeService.deleteAllTracks();
     await playtimeService.deleteAllUsers();
     user = await playtimeService.createUser(maggie);
-    await playtimeService.authenticate(maggie);
+    await playtimeService.authenticate(maggieCredentials);
     mozart.userid = user._id;
     beethovenSonatas = await playtimeService.createPlaylist(mozart);
   });
