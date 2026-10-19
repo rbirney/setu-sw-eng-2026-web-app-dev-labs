@@ -18,7 +18,6 @@ suite("Playlist API tests", () => {
     await playtimeService.deleteAllUsers();
     user = await playtimeService.createUser(maggie);
     await playtimeService.authenticate(maggieCredentials);
-    mozart.userid = user._id;
   });
 
   teardown(async () => {});
@@ -27,8 +26,9 @@ suite("Playlist API tests", () => {
     const returnedPlaylist = await playtimeService.createPlaylist(mozart);
     assert.isNotNull(returnedPlaylist);
     assertSubset(mozart, returnedPlaylist);
+    assert.equal(returnedPlaylist.userid, user._id);
   });
-
+  
   test("delete a playlist", async () => {
     const playlist = await playtimeService.createPlaylist(mozart);
     const response = await playtimeService.deletePlaylist(playlist._id);

@@ -51,7 +51,11 @@ export const playlistApi = {
     handler: async function (request, h) {
       try {
         const playlist = request.payload;
-        const newPlaylist = await db.playlistStore.addPlaylist(playlist);
+        const userid = request.auth.credentials._id;
+        const newPlaylist = await db.playlistStore.addPlaylist({
+          ...playlist,
+          userid
+        });
         if (newPlaylist) {
           return h.response(newPlaylist).code(201);
         }
