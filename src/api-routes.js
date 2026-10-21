@@ -13,6 +13,7 @@ export const apiRoutes = [
   { method: "POST", path: "/api/playlists", config: playlistApi.create },
   { method: "DELETE", path: "/api/playlists", config: playlistApi.deleteAll },
   { method: "GET", path: "/api/playlists", config: playlistApi.find },
+  { method: "GET", path: "/api/playlists/user", config: playlistApi.findByUser },
   { method: "GET", path: "/api/playlists/{id}", config: playlistApi.findOne },
   { method: "DELETE", path: "/api/playlists/{id}", config: playlistApi.deleteOne },
   

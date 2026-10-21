@@ -22,6 +22,25 @@ export const playlistApi = {
     notes: "Returns all playlists",
   },
 
+  findByUser: {
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      try {
+        const userid = request.auth.credentials._id;
+        const userPlaylists = await db.playlistStore.getUserPlaylists(userid);
+        return userPlaylists;
+      } catch (err) {
+        return Boom.serverUnavailable("Database Error");
+      }
+    },
+    tags: ["api"],
+    response: { schema: PlaylistArraySpec, failAction: validationError },
+    description: "Get all playlists belonging to the authenticated user",
+    notes: "Returns all playlists belonging to the authenticated user",
+  },
+  
   findOne: {
     auth: {
       strategy: "jwt",
