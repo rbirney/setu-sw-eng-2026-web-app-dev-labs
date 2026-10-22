@@ -22,6 +22,8 @@ export const webRoutes = [
     { method: "POST", path: "/dashboard/addplaylist", config: dashboardController.addPlaylist },
     { method: "POST", path: "/playlist/{id}/addtrack", config: playlistController.addTrack },
     
+    { method: "POST", path: "/playlist/{id}/uploadimage", config: playlistController.uploadImage },
+    
     { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } }
 
 ];
